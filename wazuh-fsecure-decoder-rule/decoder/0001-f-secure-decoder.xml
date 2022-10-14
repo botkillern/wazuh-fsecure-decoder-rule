@@ -1,29 +1,19 @@
-<!-- Local Decoders -->
-
-<!-- Modify it at your will. -->
-<!-- Copyright (C) 2015, Wazuh Inc. -->
+<!-- F-Secure Decoders -->
 
 <!--
-  - Allowed static fields:
-  - location   - where the log came from (only on FTS)
-  - srcuser    - extracts the source username
-  - dstuser    - extracts the destination (target) username
-  - user       - an alias to dstuser (only one of the two can be used)
-  - srcip      - source ip
-  - dstip      - dst ip
-  - srcport    - source port
-  - dstport    - destination port
-  - protocol   - protocol
-  - id         - event id
-  - url        - url of the event
-  - action     - event action (deny, drop, accept, etc)
-  - status     - event status (success, failure, etc)
-  - extra_data - Any extra data
+  - Example Logs:
+  1 - online_safety.harmful_page.block:
+  Protection event [alertMeta@0 eventType="reputationBasedBrowsing.blocked" deviceName="DESKTOP-HOSTNAME" deviceId="1110000" suser="DOMAIN\user.name" accountName="CLIENT NAME" details_alertType="online_safety.harmful_page.block" details_clientTimestamp="1665768548762" details_hostIpAddress="192.168.192.1/24 192.168.245.1/24 192.168.15.1/24" details_process="chrome.exe" details_profileId="67053222" details_profileName="F-Secure Profile Name" details_profileVersion="1665257711" details_reason="BP_Harmful" details_throttledCount="0" details_url="hxxp://site.com.br" details_userName="DOMAIN\user.name" details_userPrincipalName="user.name@domain.local" message="Webpage "hxxp://site.com.br" was blocked due to reputation rated harmful"]
+  
+  2 - online_safety.category_page.block:
+  Content Control event [alertMeta@0 eventType="webContentControl.blocked" deviceName="DESKTOP-HOSTNAME" deviceId="1110000" suser="AzureAD\UserName" accountName="CLIENT NAME" details_alertType="online_safety.category_page.block" details_categories="adult" details_clientTimestamp="1665768522609" details_hostIpAddress="10.10.0.144/21 192.168.56.1/24 192.168.15.1/24" details_process="outlook.exe" details_profileId="67050977" details_profileName="F-Secure Profile Name" details_profileVersion="1665173361" details_reason="WF_Category" details_throttledCount="0" details_userName="AzureAD\UserName" message="Web content control blocked webpage due to category "adult" being disallowed"]
+  
+  3 - xfence.blocked:
+   event [alertMeta@0 eventType="unknown.blocked" deviceName="DESKTOP-HOSTNAME" deviceId="1110000" accountName="CLIENT NAME" details_alertType="xfence.blocked" details_clientTimestamp="1665769301332" details_operation="write" details_parentPath="/Applications/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper" details_processHash="1bae669e2610e15bf24f3346746d9f053fe6df28ef158a02adbed34517ff55d5" details_processPath="/Users/user.name/.wakatime/wakatime-cli-darwin-arm64" details_processTeamId="338RQNWEXA" details_profileId="57050055" details_profileName="F-Secure Profile Name" details_profileVersion="1665497907" details_targetPath="/Users/user.name/.wakatime-internal.cfg" message="Descriptive message is not yet supported for this event type"]
+  
+  4 - firewall.fs_rule_triggered.block:
+  Firewall event [alertMeta@0 eventType="firewall.blocked" deviceName="DESKTOP-HOSTNAME" deviceId="1110000" suser="DOMAIN\user.name" accountName="CLIENT NAME" details_alertType="firewall.fs_rule_triggered.block" details_clientTimestamp="1665759910529" details_hostIpAddress="192.168.192.1/24 192.168.245.1/24 192.168.15.1/24" details_ipProtocol="TCP(6)" details_layerName="Camada v4 de Conexão ALE" details_localAddress="192.168.15.1" details_localPort="28688" details_process="\device\harddiskvolume3\users\user.name\appdata\local\programs\opera\opera.exe" details_profileId="67050977" details_profileName="F-Secure Profile Name" details_profileVersion="1665173361" details_remoteAddress="34.117.59.81" details_remotePort="443" details_ruleDirection="outbound" details_ruleGroupName="F-Secure Firewall" details_ruleName="Block Traffic to Troja Dropper" details_throttledCount="5" details_userName="DOMAIN\user.name" details_userPrincipalName="user.name@domain.local" message=""chrome.exe" was blocked from connecting to "34.117.59.81""]
 -->
-
-<decoder name="local_decoder_example">
-    <program_name>local_decoder_example</program_name>
-</decoder>
 
 <decoder name="f-secure">
     <prematch>alertMeta@0</prematch>
