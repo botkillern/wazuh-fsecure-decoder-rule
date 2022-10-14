@@ -33,3 +33,12 @@
     <description>F-secure Webpage was blocked due to reputation rated harmful. </description>    
   </rule>
 </group>
+
+<!-- F-Secure Manual Scanning Infected File Alert -->
+<group name="f-secure,syslog">
+  <rule id="100026" level="9">
+    <decoded_as>f-secure</decoded_as>
+    <field name="f-secure.alertType">file</field>
+    <description>F-secure File Scanning detect malicious file. </description>    
+  </rule>
+</group>
