@@ -1,0 +1,35 @@
+<!-->F-secure Web Access Blocked Rule -->
+<group name="f-secure,syslog">
+ <rule id="100022" level="5">
+    <decoded_as>f-secure</decoded_as>
+    <field name="f-secure.alertType">online_safety.category_page.block</field>
+    <description>Web access blocked on F-Secure</description>
+  </rule>
+</group>
+
+<!-->F-secure Xfence Rule -->
+<group name="f-secure,syslog">
+  <rule id="100023" level="5">
+    <decoded_as>f-secure</decoded_as>
+    <field name="f-secure.alertType">xfence.blocked</field>
+    <description>F-secure Xfence Module blocked proccess. </description>
+  </rule>
+</group>
+
+<!-- F-Secure Firewall Rule -->
+<group name="f-secure,syslog">
+  <rule id="100024" level="5">
+    <decoded_as>f-secure</decoded_as>
+    <field name="f-secure.alertType">firewall.fs_rule_triggered.block</field>
+    <description>F-secure Firewall Blocked Traffic. </description>    
+  </rule>
+</group>
+
+<!-- F-Secure WebPage Harmful -->
+<group name="f-secure,syslog">
+  <rule id="100025" level="5">
+    <decoded_as>f-secure</decoded_as>
+    <field name="f-secure.alertType">online_safety.harmful_page.block</field>
+    <description>F-secure Webpage was blocked due to reputation rated harmful. </description>    
+  </rule>
+</group>

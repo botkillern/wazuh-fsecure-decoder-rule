@@ -1,0 +1,198 @@
+<!-- Local Decoders -->
+
+<!-- Modify it at your will. -->
+<!-- Copyright (C) 2015, Wazuh Inc. -->
+
+<!--
+  - Allowed static fields:
+  - location   - where the log came from (only on FTS)
+  - srcuser    - extracts the source username
+  - dstuser    - extracts the destination (target) username
+  - user       - an alias to dstuser (only one of the two can be used)
+  - srcip      - source ip
+  - dstip      - dst ip
+  - srcport    - source port
+  - dstport    - destination port
+  - protocol   - protocol
+  - id         - event id
+  - url        - url of the event
+  - action     - event action (deny, drop, accept, etc)
+  - status     - event status (success, failure, etc)
+  - extra_data - Any extra data
+-->
+
+<decoder name="local_decoder_example">
+    <program_name>local_decoder_example</program_name>
+</decoder>
+
+<decoder name="f-secure">
+    <prematch>alertMeta@0</prematch>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>eventType="(\.*)"|eventType=(\.*)\s|eventType=(\.*)$</regex>
+  <order>f-secure.eventtype</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>deviceName="(\.*)"|deviceName=(\.*)\s|deviceName=(\.*)$</regex>
+  <order>f-secure.devicename</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>deviceId="(\.*)"|deviceId=(\.*)\s|deviceId=(\.*)$</regex>
+  <order>f-secure.deviceid</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_alertType="(\.*)"|details_alertType=(\.*)\s|details_alertType=(\.*)$</regex>
+  <order>f-secure.alertType</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_clientTimestamp="(\.d)"|details_clientTimestamp=(\.d)\s|details_clientTimestamp=(\.d)$</regex>
+  <order>f-secure.timestamp</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_operation="(\.*)"|details_operation=(\.*)\s|details_operation=(\.*)$</regex>
+  <order>f-secure.operation</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_parentPath="(\.*)"|details_parentPath=(\.*)\s|details_parentPath=(\.*)$</regex>
+  <order>f-secure.parentPath</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_processHash="(\.*)"|details_processHash=(\.*)\s|details_processHash=(\.*)$</regex>
+  <order>f-secure.processHash</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_processPath="(\.*)"|details_processPath=(\.*)\s|details_processPath=(\.*)$</regex>
+  <order>f-secure.processPath</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_profileId="(\.*)"|details_profileId=(\.*)\s|details_profileId=(\.*)$</regex>
+  <order>f-secure.profileId</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_profileName="(\.*)"|details_profileName=(\.*)\s|details_profileName=(\.*)$</regex>
+  <order>f-secure.profileName</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_profileVersion="(\.*)"|details_profileVersion=(\.*)\s|details_profileVersion=(\.*)$</regex>
+  <order>f-secure.profileVersion</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_targetPath="(\.*)"|details_targetPath=(\.*)\s|details_targetPath=(\.*)$</regex>
+  <order>f-secure.targetPath</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>suser="(\.*)"|suser=(\.*)\s|suser=(\.*)$</regex>
+  <order>user</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_categories="(\.*)"|details_categories=(\.*)\s|details_categories=(\.*)$</regex>
+  <order>f-secure.categorie</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_hostIpAddress="(\.*)"|details_hostIpAddress=(\.*)\s|details_hostIpAddress=(\.*)$</regex>
+  <order>srcip</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_process=="(\.*)"|details_process==(\.*)\s|details_process==(\.*)$</regex>
+  <order>f-secure.process</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_userPrincipalName="(\.*)"|details_userPrincipalName=(\.*)\s|details_userPrincipalName=(\.*)$</regex>
+  <order>f-secure.userPrincipalName</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>message="(\.*)"|message=(\.*)\s|message=(\.*)$</regex>
+  <order>f-secure.message</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>action="(\.*)"|action=(\.*)\s|action=(\.*)$</regex>
+  <order>action</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_localAddress="(\.*)"|details_localAddress=(\.*)\s|details_localAddress=(\.*)$</regex>
+  <order>f-secure.localAddress</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_remoteAddress="(\.*)"|details_remoteAddress=(\.*)\s|details_remoteAddress=(\.*)$</regex>
+  <order>f-secure.remoteAddress</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_remotePort="(\.*)"|details_remotePort=(\.*)\s|details_remotePort=(\.*)$</regex>
+  <order>f-secure.remotePort</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_ruleDirection="(\.*)"|details_ruleDirection=(\.*)\s|details_ruleDirection=(\.*)$</regex>
+  <order>f-secure.ruleDirection</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_ruleName="(\.*)"|details_ruleName=(\.*)\s|details_ruleName=(\.*)$</regex>
+  <order>f-secure.ruleName</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_ruleGroupName="(\.*)"|details_ruleGroupName=(\.*)\s|details_ruleGroupName=(\.*)$</regex>
+  <order>f-secure.groupName</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_url="(\.*)"|details_url=(\.*)\s|details_url=(\.*)$</regex>
+  <order>f-secure.url</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_reason="(\.*)"|details_reason=(\.*)\s|details_reason=(\.*)$</regex>
+  <order>f-secure.url</order>
+</decoder>
