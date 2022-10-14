@@ -186,3 +186,59 @@
   <regex>details_reason="(\.*)"|details_reason=(\.*)\s|details_reason=(\.*)$</regex>
   <order>f-secure.url</order>
 </decoder>
+
+<!-- Blank Line -->
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_reason="(\.*)"|details_reason=(\.*)\s|details_reason=(\.*)$</regex>
+  <order>f-secure.reason</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>infectedObject="(\.*)"|infectedObject=(\.*)\s|infectedObject=(\.*)$</regex>
+  <order>f-secure.infectedObject</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>malwareName="(\.*)"|malwareName=(\.*)\s|malwareName=(\.*)$</regex>
+  <order>f-secure.malwareName</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_alertSource="(\.*)"|details_alertSource=(\.*)\s|details_alertSource=(\.*)$</regex>
+  <order>f-secure.alertSource</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_filePath="(\.*)"|details_filePath=(\.*)\s|details_filePath=(\.*)$</regex>
+  <order>f-secure.filePath</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_fileScanningType="(\.*)"|details_fileScanningType=(\.*)\s|details_fileScanningType=(\.*)$</regex>
+  <order>f-secure.fileScanningType</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_name="(\.*)"|details_name=(\.*)\s|details_name=(\.*)$</regex>
+  <order>f-secure.name</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_sha1="(\.*)"|details_sha1=(\.*)\s|details_sha1=(\.*)$</regex>
+  <order>f-secure.sha1</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_subItem="(\.*)"|details_subItem=(\.*)\s|details_subItem=(\.*)$</regex>
+  <order>f-secure.subItem</order>
+</decoder>
