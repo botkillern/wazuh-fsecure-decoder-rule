@@ -13,6 +13,10 @@
   
   4 - firewall.fs_rule_triggered.block:
   Firewall event [alertMeta@0 eventType="firewall.blocked" deviceName="DESKTOP-HOSTNAME" deviceId="1110000" suser="DOMAIN\user.name" accountName="CLIENT NAME" details_alertType="firewall.fs_rule_triggered.block" details_clientTimestamp="1665759910529" details_hostIpAddress="192.168.192.1/24 192.168.245.1/24 192.168.15.1/24" details_ipProtocol="TCP(6)" details_layerName="Camada v4 de Conexão ALE" details_localAddress="192.168.15.1" details_localPort="28688" details_process="\device\harddiskvolume3\users\user.name\appdata\local\programs\opera\opera.exe" details_profileId="67050977" details_profileName="F-Secure Profile Name" details_profileVersion="1665173361" details_remoteAddress="34.117.59.81" details_remotePort="443" details_ruleDirection="outbound" details_ruleGroupName="F-Secure Firewall" details_ruleName="Block Traffic to Troja Dropper" details_throttledCount="5" details_userName="DOMAIN\user.name" details_userPrincipalName="user.name@domain.local" message=""chrome.exe" was blocked from connecting to "34.117.59.81""]
+
+  5 - device_control.execution.blocked
+  evice Control event [alertMeta@0 eventType="deviceControl.blocked" deviceName="DESKTOP-HOSTNAME" deviceId="1110000" suser="DOMAIN\user.name" accountName="CLIENT NAME" details_alertType="device_control.execution.blocked" details_clientTimestamp="1666028401162" details_deviceId="USBSTOR\DISK&VEN_SANDISK&PROD_CRUZER_BLADE&REV_1.27\4C530201660627111111&0" details_deviceName="SanDisk Cruzer Blade USB Device" details_devicePath="\??\USBSTOR#Disk&Ven_SanDisk&Prod_Cruzer_Blade&Rev_1.27#4C530201660627111111&0#{53f56307-b6bf-11d0-94f2-00a0c91efb8b}" details_hostIpAddress="192.168.15.1/24" details_initiator="C:\Windows\explorer.exe" details_profileId="61109257" details_profileName="F-Secure Profile" details_profileVersion="1958843361" details_throttledCount="0" details_userName="DOMAIN\user.name" details_userPrincipalName="user.name@domain.local" message="An attempt to execute files on the following device was blocked: "SanDisk Cruzer Blade USB Device""]
+
 -->
 
 <decoder name="f-secure">
