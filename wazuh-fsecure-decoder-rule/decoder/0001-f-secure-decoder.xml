@@ -268,3 +268,9 @@
   <regex>details_initiator="(\.*)"|details_initiator=(\.*)\s|details_initiator=(\.*)$</regex>
   <order>f-secure.initiator</order>
 </decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_throttledCount="(\.*)"|details_throttledCount=(\.*)\s|details_throttledCount=(\.*)$</regex>
+  <order>f-secure.throttledCount</order>
+</decoder>
