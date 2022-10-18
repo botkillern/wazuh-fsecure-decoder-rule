@@ -47,7 +47,7 @@
 
 <!-- F-Secure Device Control Alert  -->
 <group name="f-secure,syslog">
-  <rule id="100026" level="5">
+  <rule id="100027" level="8">
     <decoded_as>f-secure</decoded_as>
     <field name="f-secure.alertType">device_control.execution.blocked</field>
     <description>F-secure Device Control Detect Blocked an Attempt to Access Device. </description>    
