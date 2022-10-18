@@ -187,7 +187,7 @@
   <order>f-secure.url</order>
 </decoder>
 
-<!-- Blank Line -->
+<!-- Adding Malware Fields -->
 
 <decoder name="f-secure-fields">
   <parent>f-secure</parent>
@@ -241,4 +241,30 @@
   <parent>f-secure</parent>
   <regex>details_subItem="(\.*)"|details_subItem=(\.*)\s|details_subItem=(\.*)$</regex>
   <order>f-secure.subItem</order>
+</decoder>
+
+<!-- Adding USB Initiator Fields -->
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_deviceId="(\.*)"|details_deviceId=(\.*)\s|details_deviceId=(\.*)$</regex>
+  <order>f-secure.detailDeviceId</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_deviceName="(\.*)"|details_deviceName=(\.*)\s|details_deviceName=(\.*)$</regex>
+  <order>f-secure.detailDeviceName</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_devicePath="(\.*)"|details_devicePath=(\.*)\s|details_devicePath=(\.*)$</regex>
+  <order>f-secure.detailDevicePath</order>
+</decoder>
+
+<decoder name="f-secure-fields">
+  <parent>f-secure</parent>
+  <regex>details_initiator="(\.*)"|details_initiator=(\.*)\s|details_initiator=(\.*)$</regex>
+  <order>f-secure.initiator</order>
 </decoder>
